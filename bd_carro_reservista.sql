@@ -29,7 +29,7 @@ use bd_17_02;
     primary key(id_vec),
     foreign key(id_pes) references Pessoa(id_pes)
  );
- 
+ /*as primary keys tem que ser declaradas na ordem que foram criadas na tabela*/
  create table if not exists vec_has_gar(
 	id_al int auto_increment,
 	id_vec int not null,
