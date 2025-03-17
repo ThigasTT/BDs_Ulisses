@@ -69,7 +69,7 @@ inner join projeto as p on r.cod_proj = p.cod_proj;
 #teste
 select * from consulta1;
 #criando usuário
-##create user "nome"@"host" identified by senha";
+##create user "nome"@"host" identified by "senha";
 create user "josney"@"localhost" identified by "etecjk1234";
 /*Conceder Privilégios*
 Manipulação de dados: insert, select, update, delete
@@ -80,9 +80,12 @@ grant privilegio on nomedabase.nomedatabela to "nome"@"host";
 todos os privilégios: grant all privileges on nomedabase.nomedatabela to "nome"@"host"
 recarregar os privilégios:flush privileges
 revogar privilégios: revoke privilegios on base.tabelas from "nome"@"host"
+mostrar os seus privilégios: show grants
+mostrar os usuarios: select user,host from mysql.user;
+mostrar os privilégios de um usuario: show grants for "user"@"host";
 */
 
 grant select on atv_10_03.* to "josney"@"localhost"; 
 flush privileges;
-
+shoW grants
 revoke all privileges on *.* from "josney"@"localhost";
