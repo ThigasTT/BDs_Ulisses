@@ -1,5 +1,4 @@
 /*NOME: Thiago Caetano da Silva Ferreira*/
-
 create database if not exists atv_10_03;
 use atv_10_03;
 
@@ -69,4 +68,21 @@ inner join projeto as p on r.cod_proj = p.cod_proj;
 
 #teste
 select * from consulta1;
+#criando usuário
+##create user "nome"@"host" identified by senha";
+create user "josney"@"localhost" identified by "etecjk1234";
+/*Conceder Privilégios*
+Manipulação de dados: insert, select, update, delete
+Manipulação de tabelas: create, drop, alter
 
+comando:
+grant privilegio on nomedabase.nomedatabela to "nome"@"host";
+todos os privilégios: grant all privileges on nomedabase.nomedatabela to "nome"@"host"
+recarregar os privilégios:flush privileges
+revogar privilégios: revoke privilegios on base.tabelas from "nome"@"host"
+*/
+
+grant select on atv_10_03.* to "josney"@"localhost"; 
+flush privileges;
+
+revoke all privileges on *.* from "josney"@"localhost";
